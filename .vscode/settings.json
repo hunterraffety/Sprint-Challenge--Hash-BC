@@ -3,5 +3,6 @@
         "activityBar.background": "#242E3C",
         "titleBar.activeBackground": "#334054",
         "titleBar.activeForeground": "#F9FAFC"
-    }
+    },
+    "python.pythonPath": "C:\\Users\\hr\\.virtualenvs\\Sprint-Challenge--Hash-BC-HBdk3JIG\\Scripts\\python.exe"
 }
