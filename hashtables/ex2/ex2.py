@@ -16,7 +16,7 @@ class Ticket:
 # We can hash each ticket such that the starting location is the key and the destination is the value. Then, when constructing the entire route, the ith location in the route can be found by checking the hash table for the i-1th location.
 
 def reconstruct_trip(tickets, length):
-    print(f"tickets: {tickets} length: {length}")
+    #print(f"tickets: {tickets} length: {length}")
     hashtable = HashTable(length)
     route = [None] * length
 
@@ -29,21 +29,23 @@ def reconstruct_trip(tickets, length):
 
     #we need to insert the tickets and attach them to a starting location and a destination location. start: key, dest: value
     for i in range(0, length):
-        print(f"tickets: {tickets[i]}")
+        #print(f"tickets: {tickets[i]}")
         #need to use hash_table_insert to get the key and value into our ht buckets
         hash_table_insert(hashtable, tickets[i].source, tickets[i].destination)
 
-        #we set index of 0 to whatever ticket has the source of NONE
-        route[0] = hash_table_retrieve(hashtable, 'NONE')
+    #we set index of 0 to whatever ticket has the source of NONE
+    route[0] = hash_table_retrieve(hashtable, 'NONE')
 
-        #the ith location in the route can be found by checking the hash table for the i-1th location.
-        
+        #HINT: the ith location in the route can be found by checking the hash table for the i-1th location. start at 1 because 0 has already been taken up by the 'NONE' source ticket, then iterate forward.
+    for i in range(1, length):
+        route[i] = hash_table_retrieve(hashtable, route[i - 1])
+            
     return route
 
-ticket_1 = Ticket("NONE", "PDX")
-ticket_2 = Ticket("PDX", "DCA")
-ticket_3 = Ticket("DCA", "NONE")
+# ticket_1 = Ticket("NONE", "PDX")
+# ticket_2 = Ticket("PDX", "DCA")
+# ticket_3 = Ticket("DCA", "NONE")
 
-tickets = [ticket_1, ticket_2, ticket_3]
+# tickets = [ticket_1, ticket_2, ticket_3]
 
-reconstruct_trip(tickets, 3)
+# reconstruct_trip(tickets, 3)
