@@ -26,9 +26,11 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
-    proof = 0
+    # proof = 0
+    num_rand = random.randrange(0, 99137)
+
     while valid_proof(last_proof, proof) is False:
-        proof += 1
+        proof += num_rand
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
@@ -42,8 +44,10 @@ def valid_proof(last_hash, proof):
     """
     guess = f'{proof}'.encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
+
+    return str(last_hash)[-6:] == guess_hash[:6]
     # TODO: Your code here!
-    pass
+    # pass
 
 
 if __name__ == '__main__':
