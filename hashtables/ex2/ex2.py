@@ -25,5 +25,19 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
+    # ticket_1 = Ticket("NONE", "PDX")
+    # ticket_2 = Ticket("PDX", "DCA")
+    # ticket_3 = Ticket("DCA", "NONE")
 
+    #we need to insert the tickets and attach them to a starting location and a destination location. start: key, dest: value
+    for i in range(0, length):
+        print(f"tickets: {tickets[i]}")
     return route
+
+ticket_1 = Ticket("NONE", "PDX")
+ticket_2 = Ticket("PDX", "DCA")
+ticket_3 = Ticket("DCA", "NONE")
+
+tickets = [ticket_1, ticket_2, ticket_3]
+
+reconstruct_trip(tickets, 3)
