@@ -27,10 +27,10 @@ def proof_of_work(last_proof):
     proof = 0
     #  TODO: Your code here
     # proof = 0
-    num_rand = random.randrange(0, 99437)
+    #num_rand = random.randrange(0, 99437)
 
     while not valid_proof(last_proof, proof):
-        proof += num_rand
+        proof += 1
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
@@ -76,7 +76,7 @@ if __name__ == '__main__':
         new_proof = proof_of_work(data.get('proof'))
 
         post_data = {"proof": new_proof,
-                     "id": id}
+                    "id": id}
 
         r = requests.post(url=node + "/mine", json=post_data)
         data = r.json()
