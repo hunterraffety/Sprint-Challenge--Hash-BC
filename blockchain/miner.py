@@ -27,9 +27,9 @@ def proof_of_work(last_proof):
     proof = 0
     #  TODO: Your code here
     # proof = 0
-    num_rand = random.randrange(0, 99137)
+    num_rand = random.randrange(0, 99437)
 
-    while valid_proof(last_proof, proof) is False:
+    while not valid_proof(last_proof, proof):
         proof += num_rand
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof

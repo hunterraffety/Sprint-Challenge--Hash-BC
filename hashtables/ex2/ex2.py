@@ -1,9 +1,7 @@
 #  Hint:  You may not need all of these.  Remove the unused functions.
 from hashtables import (HashTable,
                         hash_table_insert,
-                        hash_table_remove,
-                        hash_table_retrieve,
-                        hash_table_resize)
+                        hash_table_retrieve)
 
 
 class Ticket:
@@ -32,6 +30,14 @@ def reconstruct_trip(tickets, length):
     #we need to insert the tickets and attach them to a starting location and a destination location. start: key, dest: value
     for i in range(0, length):
         print(f"tickets: {tickets[i]}")
+        #need to use hash_table_insert to get the key and value into our ht buckets
+        hash_table_insert(hashtable, tickets[i].source, tickets[i].destination)
+
+        #we set index of 0 to whatever ticket has the source of NONE
+        route[0] = hash_table_retrieve(hashtable, 'NONE')
+
+        #the ith location in the route can be found by checking the hash table for the i-1th location.
+        
     return route
 
 ticket_1 = Ticket("NONE", "PDX")

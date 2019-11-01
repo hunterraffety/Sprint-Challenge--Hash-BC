@@ -60,3 +60,29 @@ def print_answer(answer):
         print(str(answer[0] + " " + answer[1]))
     else:
         print("None")
+
+# from hashtables import (HashTable,
+#                         hash_table_insert,
+#                         hash_table_remove,
+#                         hash_table_retrieve,
+#                         hash_table_resize)
+
+# def integer_pairs(arr, sum):
+#     ht = HashTable(16)
+
+#     # Loop through the list and store each key value pair into a hash table
+#     for i in range(len(arr)):
+#         difference = hash_table_retrieve(ht, arr[i])
+#         if difference is None:
+#             hash_table_insert(ht, sum-arr[i], arr[i])
+            
+#         else:
+#             return (arr[i], difference)
+#     return None
+
+
+# print(integer_pairs([9], 0)) # None
+# print(integer_pairs([4, 4], 8)) # [4, 4]
+# print(integer_pairs([4, 6, 10, 15, 16], 21)) # [15, 6]
+# print(integer_pairs([12, 6, 7, 14, 19, 3, 0, 25, 40], 7)) # [0, 7]
+# print(integer_pairs([4, 6, 10, 15, 16], 27)) # None
