@@ -1,8 +1,8 @@
 {
-    "python.pythonPath": "/Users/briandoyle/.local/share/virtualenvs/sc-hash-bc-student-HSwDRd-G/bin/python",
     "workbench.colorCustomizations": {
         "activityBar.background": "#242E3C",
         "titleBar.activeBackground": "#334054",
         "titleBar.activeForeground": "#F9FAFC"
-    }
+    },
+    "python.pythonPath": "C:\\Users\\hr\\.virtualenvs\\Sprint-Challenge--Hash-BC-HBdk3JIG\\Scripts\\python.exe"
 }
